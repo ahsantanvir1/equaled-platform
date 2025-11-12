@@ -1,0 +1,383 @@
+// Prisma Schema for EqualEd Platform
+// Database: PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Enums
+enum UserRole {
+  STUDENT
+  PARENT
+  TUTOR
+  DONOR
+  ADMIN
+}
+
+enum SessionStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+enum PackageTier {
+  STARTER  // 2 sessions/month
+  SUPPORT  // 4 sessions/month
+  GROWTH   // 8 sessions/month
+}
+
+enum DonationType {
+  ONE_TIME
+  RECURRING
+  SPONSOR_STUDENT
+}
+
+enum TutorStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+  INACTIVE
+}
+
+enum QualificationStatus {
+  FREE_ELIGIBLE  // Qualifies for free tutoring
+  PAID           // Must use paid packages
+}
+
+// Models
+model User {
+  id                String              @id @default(uuid())
+  email             String              @unique
+  password          String?
+  firstName         String
+  lastName          String
+  role              UserRole            @default(STUDENT)
+  phone             String?
+  profileImage      String?
+  emailVerified     Boolean             @default(false)
+  qualificationStatus QualificationStatus @default(PAID)
+  state             String              @default("Pennsylvania")
+  
+  // OAuth fields
+  googleId          String?             @unique
+  facebookId        String?             @unique
+  
+  // Relationships
+  studentProfile    Student?
+  parentProfile     Parent?
+  tutorProfile      Tutor?
+  donorProfile      Donor?
+  
+  // Timestamps
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  lastLogin         DateTime?
+  
+  @@index([email])
+  @@index([role])
+}
+
+model Student {
+  id                String              @id @default(uuid())
+  userId            String              @unique
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  gradeLevel        Int?                // K-12
+  subjects          String[]            // Subjects they need help with
+  learningGoals     String?
+  
+  // Relationships
+  bookings          Booking[]
+  sponsorships      Sponsorship[]       @relation("SponsoredStudent")
+  reviews           Review[]
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+}
+
+model Parent {
+  id                String              @id @default(uuid())
+  userId            String              @unique
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  studentIds        String[]            // Array of student IDs they manage
+  
+  // Package subscription
+  subscriptions     Subscription[]
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+}
+
+model Tutor {
+  id                String              @id @default(uuid())
+  userId            String              @unique
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Profile
+  bio               String
+  subjects          String[]            // Subjects they teach
+  gradelevels       Int[]               // Grade levels they teach
+  education         String              // Highest education
+  experience        Int                 // Years of experience
+  certifications    String[]
+  
+  // Pricing
+  hourlyRate        Float               @default(50)
+  
+  // Status
+  status            TutorStatus         @default(PENDING)
+  verificationDocs  String[]            // URLs to uploaded documents
+  backgroundCheck   Boolean             @default(false)
+  
+  // Availability
+  availableSlots    AvailableSlot[]
+  
+  // Performance
+  rating            Float               @default(0)
+  totalSessions     Int                 @default(0)
+  totalEarnings     Float               @default(0)
+  
+  // Relationships
+  bookings          Booking[]
+  reviews           Review[]
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  approvedAt        DateTime?
+  
+  @@index([status])
+  @@index([subjects])
+}
+
+model AvailableSlot {
+  id                String              @id @default(uuid())
+  tutorId           String
+  tutor             Tutor               @relation(fields: [tutorId], references: [id], onDelete: Cascade)
+  
+  dayOfWeek         Int                 // 0-6 (Sunday-Saturday)
+  startTime         String              // HH:MM format
+  endTime           String              // HH:MM format
+  timezone          String              @default("America/New_York")
+  
+  isRecurring       Boolean             @default(true)
+  specificDate      DateTime?           // For one-time availability
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  @@index([tutorId])
+}
+
+model Booking {
+  id                String              @id @default(uuid())
+  
+  // Participants
+  studentId         String
+  student           Student             @relation(fields: [studentId], references: [id])
+  tutorId           String
+  tutor             Tutor               @relation(fields: [tutorId], references: [id])
+  
+  // Session details
+  subject           String
+  scheduledAt       DateTime
+  duration          Int                 @default(60) // minutes
+  timezone          String              @default("America/New_York")
+  sessionType       String              @default("ONLINE") // ONLINE or IN_PERSON
+  maxParticipants   Int                 @default(1)
+  currentParticipants Int               @default(1)
+  
+  // Status
+  status            SessionStatus       @default(SCHEDULED)
+  
+  // Payment
+  isFree            Boolean             @default(false) // Sponsored by donation
+  amountPaid        Float?
+  sponsorshipId     String?
+  sponsorship       Sponsorship?        @relation(fields: [sponsorshipId], references: [id])
+  subscriptionId    String?
+  subscription      Subscription?       @relation(fields: [subscriptionId], references: [id])
+  
+  // Notes
+  notes             String?
+  cancellationReason String?
+  
+  // Reminders
+  reminder24hSent   Boolean             @default(false)
+  reminder2hSent    Boolean             @default(false)
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  completedAt       DateTime?
+  
+  @@index([studentId])
+  @@index([tutorId])
+  @@index([scheduledAt])
+  @@index([status])
+}
+
+model Review {
+  id                String              @id @default(uuid())
+  
+  studentId         String
+  student           Student             @relation(fields: [studentId], references: [id])
+  tutorId           String
+  tutor             Tutor               @relation(fields: [tutorId], references: [id])
+  
+  rating            Int                 // 1-5 stars
+  comment           String?
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  @@index([tutorId])
+}
+
+model Subscription {
+  id                String              @id @default(uuid())
+  
+  parentId          String
+  parent            Parent              @relation(fields: [parentId], references: [id])
+  
+  tier              PackageTier
+  sessionsPerMonth  Int
+  pricePerMonth     Float
+  
+  sessionsRemaining Int
+  
+  // Stripe
+  stripeSubscriptionId String?          @unique
+  stripeCustomerId  String?
+  
+  status            String              @default("active") // active, cancelled, expired
+  
+  currentPeriodStart DateTime
+  currentPeriodEnd  DateTime
+  
+  bookings          Booking[]
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  cancelledAt       DateTime?
+  
+  @@index([parentId])
+  @@index([status])
+}
+
+model Donor {
+  id                String              @id @default(uuid())
+  userId            String              @unique
+  user              User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Donor info
+  organizationName  String?             // For corporate donors
+  isAnonymous       Boolean             @default(false)
+  showOnDonorWall   Boolean             @default(true)
+  
+  // Total contributions
+  totalDonated      Float               @default(0)
+  
+  // Relationships
+  donations         Donation[]
+  sponsorships      Sponsorship[]
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+}
+
+model Donation {
+  id                String              @id @default(uuid())
+  
+  donorId           String
+  donor             Donor               @relation(fields: [donorId], references: [id])
+  
+  amount            Float
+  type              DonationType
+  
+  // For recurring
+  isRecurring       Boolean             @default(false)
+  recurringFrequency String?            // monthly, quarterly, annual
+  
+  // Stripe
+  stripePaymentId   String?             @unique
+  stripeSubscriptionId String?          @unique
+  
+  // Impact
+  impactMessage     String?             // e.g., "Funded 3 tutoring sessions"
+  sessionsSponsored Int                 @default(0)
+  
+  // Tax receipt
+  taxReceiptSent    Boolean             @default(false)
+  
+  status            String              @default("completed") // completed, pending, failed
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  @@index([donorId])
+  @@index([createdAt])
+}
+
+model Sponsorship {
+  id                String              @id @default(uuid())
+  
+  donorId           String
+  donor             Donor               @relation(fields: [donorId], references: [id])
+  
+  studentId         String
+  student           Student             @relation("SponsoredStudent", fields: [studentId], references: [id])
+  
+  // Sponsorship details
+  amount            Float
+  duration          String              // "month", "semester", "year"
+  sessionsIncluded  Int
+  sessionsUsed      Int                 @default(0)
+  
+  // Status
+  status            String              @default("active") // active, completed, cancelled
+  
+  startDate         DateTime
+  endDate           DateTime
+  
+  // Relationships
+  bookings          Booking[]
+  
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  @@index([donorId])
+  @@index([studentId])
+  @@index([status])
+}
+
+model AdminLog {
+  id                String              @id @default(uuid())
+  
+  adminId           String
+  action            String              // e.g., "APPROVED_TUTOR", "SUSPENDED_USER"
+  targetType        String              // e.g., "User", "Tutor", "Donation"
+  targetId          String
+  details           String?
+  
+  createdAt         DateTime            @default(now())
+  
+  @@index([adminId])
+  @@index([createdAt])
+}
+
+model SystemSettings {
+  id                String              @id @default(uuid())
+  
+  key               String              @unique
+  value             String
+  description       String?
+  
+  updatedAt         DateTime            @updatedAt
+}
+
