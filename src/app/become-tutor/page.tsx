@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { DollarSign, Clock, Award, GraduationCap, CheckCircle, AlertCircle } from 'lucide-react';
-import { SUBJECTS, GRADE_LEVELS } from '@/lib/constants';
+import { SUBJECTS } from '@/lib/constants';
 
 export default function BecomeTutorPage() {
   const [formData, setFormData] = useState({

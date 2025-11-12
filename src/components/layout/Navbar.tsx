@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import { Menu, X, GraduationCap, User, LogOut, Settings } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

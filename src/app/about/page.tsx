@@ -1,4 +1,4 @@
-import { Target, Heart, Users, Award, TrendingUp, BookOpen } from 'lucide-react';
+import { Target, Heart, Users, Award } from 'lucide-react';
 
 export default function AboutPage() {
   const values = [

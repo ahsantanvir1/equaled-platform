@@ -40,16 +40,16 @@ export default function PackagesPage() {
 
         {/* Packages Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {packages.map((pkg, index) => (
+          {packages.map((pkg) => (
             <div
               key={pkg.tier}
               className={`card ${
-                pkg.popular
+                'popular' in pkg && pkg.popular
                   ? 'border-4 border-primary-500 relative'
                   : 'border-2 border-gray-200'
               }`}
             >
-              {pkg.popular && (
+              {'popular' in pkg && pkg.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="bg-primary-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
                     Most Popular
@@ -97,7 +97,7 @@ export default function PackagesPage() {
               <Link
                 href={`/checkout?plan=${pkg.tier}`}
                 className={`btn w-full ${
-                  pkg.popular ? 'btn-primary' : 'btn-outline'
+                  'popular' in pkg && pkg.popular ? 'btn-primary' : 'btn-outline'
                 }`}
               >
                 Get Started

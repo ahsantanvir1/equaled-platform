@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Star, MapPin, DollarSign, Clock, Award, BookOpen, ArrowLeft, Calendar } from 'lucide-react';
+import { Star, MapPin, Clock, Award, BookOpen, ArrowLeft, Calendar } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 
 // This would normally fetch data from the database
