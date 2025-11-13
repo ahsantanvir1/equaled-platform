@@ -7,13 +7,13 @@
 
 @layer base {
   :root {
-    --foreground-rgb: 15, 23, 42;
-    --background-start-rgb: 255, 255, 255;
-    --background-end-rgb: 249, 250, 251;
+    --foreground-rgb: 29, 32, 33;
+    --background-start-rgb: 243, 242, 240;
+    --background-end-rgb: 233, 232, 230;
   }
 
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-neutral-50 text-gray-900;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -72,8 +72,8 @@
   }
 
   .btn-secondary {
-    @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
-    @apply focus:ring-gray-500;
+    @apply bg-neutral-200 text-gray-900 hover:bg-neutral-300;
+    @apply focus:ring-primary-500;
   }
 
   .btn-outline {
@@ -83,9 +83,16 @@
 
   /* Accessible form inputs */
   .input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg;
+    @apply w-full px-4 py-3 border border-neutral-300 rounded-lg bg-white;
     @apply focus:ring-2 focus:ring-primary-500 focus:border-transparent;
-    @apply disabled:bg-gray-100 disabled:cursor-not-allowed;
+    @apply disabled:bg-neutral-100 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-neutral-300 rounded-lg bg-white;
+    @apply focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply disabled:bg-neutral-100 disabled:cursor-not-allowed;
+    @apply transition-colors duration-200;
   }
 
   .input-error {
@@ -146,7 +153,7 @@
 
   /* Loading spinner */
   .spinner {
-    @apply inline-block w-6 h-6 border-4 border-gray-200 border-t-primary-600 rounded-full;
+    @apply inline-block w-6 h-6 border-4 border-neutral-200 border-t-primary-600 rounded-full;
     animation: spin 1s linear infinite;
   }
 
@@ -208,11 +215,11 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-track {
-    @apply bg-gray-100 rounded;
+    @apply bg-neutral-100 rounded;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-gray-400 rounded hover:bg-gray-500;
+    @apply bg-neutral-400 rounded hover:bg-neutral-500;
   }
 }
 

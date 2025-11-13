@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#0284c7" />
+        <meta name="theme-color" content="#658EA4" />
       </head>
       <body className={inter.className}>
         {/* Skip to main content link for accessibility (WCAG 2.1) */}
