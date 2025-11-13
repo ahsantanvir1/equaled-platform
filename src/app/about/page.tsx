@@ -67,15 +67,15 @@ export default function AboutPage() {
       {/* Founder Section */}
       <section id="founder" className="bg-white py-16 scroll-mt-20">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 text-center mb-12">
             Meet Our Founder
           </h2>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Dr. Sarah Williams</h3>
+                <h3 className="text-2xl font-bold text-neutral-900 mb-2">Dr. Sarah Williams</h3>
                 <p className="text-primary-600 text-lg font-semibold mb-6">Founder & CEO</p>
-                <div className="space-y-4 text-gray-600 leading-relaxed">
+                <div className="space-y-4 text-neutral-600 leading-relaxed">
                   <p>
                     Dr. Sarah Williams is a visionary educator with over 20 years of experience in
                     education reform and advocacy. As a former high school principal in Philadelphia,
@@ -136,20 +136,20 @@ export default function AboutPage() {
       <section id="mission" className="container-custom py-16 scroll-mt-20">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
               Our Mission
             </h2>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="text-lg text-neutral-600 mb-4">
               At EqualEd, we believe that every student deserves access to quality education,
               regardless of their background or circumstances. We&apos;re breaking down barriers to
               learning by connecting students with expert tutors who are passionate about teaching.
             </p>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="text-lg text-neutral-600 mb-4">
               Founded in 2020, we&apos;ve helped over 10,000 students achieve their academic goals
               through personalized, affordable tutoring. Our platform makes it easy to find the
               perfect tutor, schedule sessions, and track progress—all in one place.
             </p>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-neutral-600">
               Through community donations, we provide completely free tutoring to under-privileged
               students, ensuring that financial barriers never stand between a student and their education.
             </p>
@@ -164,7 +164,7 @@ export default function AboutPage() {
 
         {/* Values */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 text-center mb-12">
             Our Values
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
@@ -175,8 +175,8 @@ export default function AboutPage() {
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-100 rounded-full mb-4">
                     <Icon className="h-10 w-10 text-primary-600" aria-hidden="true" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
+                  <h3 className="text-xl font-bold text-neutral-900 mb-3">{value.title}</h3>
+                  <p className="text-neutral-600">{value.description}</p>
                 </div>
               );
             })}
@@ -203,10 +203,10 @@ export default function AboutPage() {
       <section className="bg-white py-16">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 text-center">
               Our Story
             </h2>
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
+            <div className="space-y-4 text-neutral-600 text-lg leading-relaxed">
               <p>
                 EqualEd was founded in 2020 by a group of educators and technologists who saw
                 firsthand the educational disparities facing students in Pennsylvania. During the
@@ -237,10 +237,10 @@ export default function AboutPage() {
 
       {/* Team Section */}
       <section id="team" className="container-custom py-16 scroll-mt-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 text-center mb-6">
           Our Team
         </h2>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-xl text-neutral-600 text-center mb-12 max-w-2xl mx-auto">
           Experienced educators and technologists committed to educational equity
         </p>
         <div className="grid md:grid-cols-3 gap-8">
@@ -272,9 +272,9 @@ export default function AboutPage() {
                 className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
                 loading="lazy"
               />
-              <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+              <h3 className="text-xl font-bold text-neutral-900 mb-1">{member.name}</h3>
               <p className="text-primary-600 font-semibold mb-2">{member.role}</p>
-              <p className="text-gray-600">{member.bio}</p>
+              <p className="text-neutral-600">{member.bio}</p>
             </div>
           ))}
         </div>

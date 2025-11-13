@@ -202,7 +202,7 @@ export default function TutorsPage() {
 
         {/* Results Count */}
         <div className="mb-6">
-          <p className="text-gray-600">
+          <p className="text-neutral-600">
             Showing <span className="font-semibold">{filteredTutors.length}</span> tutor
             {filteredTutors.length !== 1 ? 's' : ''}
           </p>
@@ -225,10 +225,10 @@ export default function TutorsPage() {
                   loading="lazy"
                 />
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    <h3 className="text-xl font-bold text-neutral-900 mb-1">
                       {tutor.name}
                     </h3>
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm text-neutral-600">
                       <MapPin className="h-4 w-4 mr-1" aria-hidden="true" />
                       {tutor.location}
                     </div>
@@ -241,19 +241,19 @@ export default function TutorsPage() {
                     <span className="ml-1 font-semibold">{tutor.rating}</span>
                   </div>
                   <span className="mx-2 text-gray-400">•</span>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-neutral-600">
                     {tutor.totalSessions} sessions
                   </span>
                   <span className="mx-2 text-gray-400">•</span>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-neutral-600">
                     {tutor.experience} years exp.
                   </span>
                 </div>
 
-                <p className="text-gray-600 mb-4 line-clamp-2">{tutor.bio}</p>
+                <p className="text-neutral-600 mb-4 line-clamp-2">{tutor.bio}</p>
 
                 <div className="mb-4">
-                  <div className="text-sm font-medium text-gray-700 mb-2">Teaches:</div>
+                  <div className="text-sm font-medium text-neutral-700 mb-2">Teaches:</div>
                   <div className="flex flex-wrap gap-2">
                     {tutor.subjects.slice(0, 3).map((subject) => (
                       <span key={subject} className="badge badge-primary">
@@ -261,7 +261,7 @@ export default function TutorsPage() {
                       </span>
                     ))}
                     {tutor.subjects.length > 3 && (
-                      <span className="badge bg-neutral-200 text-gray-700">
+                      <span className="badge bg-neutral-200 text-neutral-700">
                         +{tutor.subjects.length - 3} more
                       </span>
                     )}
@@ -269,7 +269,7 @@ export default function TutorsPage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t">
-                  <div className="flex items-center text-gray-900">
+                  <div className="flex items-center text-neutral-900">
                     <DollarSign className="h-5 w-5 mr-1" aria-hidden="true" />
                     <span className="text-lg font-semibold">
                       {formatCurrency(tutor.hourlyRate)}/hr
@@ -287,7 +287,7 @@ export default function TutorsPage() {
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-xl text-gray-600 mb-4">
+            <p className="text-xl text-neutral-600 mb-4">
               No tutors found matching your criteria.
             </p>
             <button

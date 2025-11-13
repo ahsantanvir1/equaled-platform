@@ -38,10 +38,10 @@ export default function Services() {
     <section className="py-20 bg-neutral-50" aria-labelledby="services-heading">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
             Why Choose EqualEd?
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             We&apos;re committed to making quality education accessible and effective for every Pennsylvania student.
           </p>
         </div>
@@ -57,8 +57,8 @@ export default function Services() {
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-100 rounded-lg mb-4 group-hover:bg-primary-200 transition-colors">
                   <Icon className="h-7 w-7 text-primary-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">{service.title}</h3>
+                <p className="text-neutral-600">{service.description}</p>
               </div>
             );
           })}

@@ -49,8 +49,8 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-          <p className="text-lg text-gray-600 mb-8">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-8">Get in Touch</h2>
+          <p className="text-lg text-neutral-600 mb-8">
             Have questions about our tutoring services? Want to become a tutor?
             Or just want to say hello? We&apos;re here to help!
           </p>
@@ -61,13 +61,13 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-primary-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Email</h3>
+                  <p className="text-neutral-600">
                     <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-primary-600">
                       {CONTACT_INFO.email}
                     </a>
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-neutral-600">
                     <a href={`mailto:${CONTACT_INFO.supportEmail}`} className="hover:text-primary-600">
                       {CONTACT_INFO.supportEmail}
                     </a>
@@ -80,13 +80,13 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6 text-primary-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Phone</h3>
+                  <p className="text-neutral-600">
                     <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-primary-600">
                       {CONTACT_INFO.phone}
                     </a>
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-neutral-600">
                     <a href={`tel:${CONTACT_INFO.tollFree}`} className="hover:text-primary-600">
                       Toll-free: {CONTACT_INFO.tollFree}
                     </a>
@@ -99,8 +99,8 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 text-primary-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Office</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Office</h3>
+                  <p className="text-neutral-600">
                     {CONTACT_INFO.address.street}
                     <br />
                     {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
@@ -114,19 +114,19 @@ export default function ContactPage() {
                   <Clock className="h-6 w-6 text-primary-600" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">
                     Business Hours
                   </h3>
-                  <p className="text-gray-600">{CONTACT_INFO.hours.weekday}</p>
-                  <p className="text-gray-600">{CONTACT_INFO.hours.saturday}</p>
-                  <p className="text-gray-600">{CONTACT_INFO.hours.sunday}</p>
+                  <p className="text-neutral-600">{CONTACT_INFO.hours.weekday}</p>
+                  <p className="text-neutral-600">{CONTACT_INFO.hours.saturday}</p>
+                  <p className="text-neutral-600">{CONTACT_INFO.hours.sunday}</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-12 bg-primary-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Quick Response</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-neutral-900 mb-3">Quick Response</h3>
+              <p className="text-neutral-600">
                 We typically respond to all inquiries within 24 hours during business days.
                 For urgent matters, please call us directly.
               </p>
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="card">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-6">Send Us a Message</h2>
 
                 {status === 'success' && (
               <div className="alert alert-success mb-6" role="alert">

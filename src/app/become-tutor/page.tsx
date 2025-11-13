@@ -63,14 +63,14 @@ export default function BecomeTutorPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-success-100 rounded-full mb-6">
             <CheckCircle className="h-10 w-10 text-success-600" aria-hidden="true" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-bold text-neutral-900 mb-4">
             Application Submitted!
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-neutral-600 mb-6">
             Thank you for your interest in joining EqualEd. We&apos;ll review your application and
             get back to you within 3-5 business days.
           </p>
-          <p className="text-gray-600 mb-8">
+          <p className="text-neutral-600 mb-8">
             Next steps:
             <ul className="list-disc list-inside mt-2 text-left max-w-md mx-auto">
               <li>Application review (1-2 days)</li>
@@ -105,7 +105,7 @@ export default function BecomeTutorPage() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Benefits */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-8">
               Why Tutor with EqualEd?
             </h2>
             <div className="space-y-6">
@@ -117,10 +117,10 @@ export default function BecomeTutorPage() {
                       <Icon className="h-6 w-6 text-primary-600" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      <h3 className="text-xl font-semibold text-neutral-900 mb-2">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-600">{benefit.description}</p>
+                      <p className="text-neutral-600">{benefit.description}</p>
                     </div>
                   </div>
                 );
@@ -128,8 +128,8 @@ export default function BecomeTutorPage() {
             </div>
 
             <div className="mt-8 bg-primary-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Requirements</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="text-xl font-bold text-neutral-900 mb-3">Requirements</h3>
+              <ul className="space-y-2 text-neutral-600">
                 <li className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-success-600 mr-2 flex-shrink-0" aria-hidden="true" />
                   Bachelor&apos;s degree or higher
@@ -156,7 +156,7 @@ export default function BecomeTutorPage() {
 
           {/* Application Form */}
           <div className="card">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Apply Now</h2>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-6">Apply Now</h2>
 
             {status === 'error' && (
               <div className="alert alert-error mb-6" role="alert">
@@ -287,7 +287,7 @@ export default function BecomeTutorPage() {
                 />
               </div>
 
-              <div className="text-xs text-gray-600">
+              <div className="text-xs text-neutral-600">
                 By submitting this application, you consent to a background check and agree
                 to our{' '}
                 <a href="/terms" className="text-primary-600 hover:text-primary-700">

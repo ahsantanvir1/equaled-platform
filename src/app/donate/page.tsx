@@ -34,7 +34,7 @@ export default function DonatePage() {
           {/* Donation Form */}
           <div>
             <div className="card">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-neutral-900 mb-6">
                 Make Your Donation
               </h2>
 
@@ -117,7 +117,7 @@ export default function DonatePage() {
 
               {/* Impact Display */}
               <div className="bg-primary-50 p-4 rounded-lg mb-6">
-                <p className="text-primary-900 font-semibold mb-1">Your Impact:</p>
+                <p className="text-neutral-900 font-semibold mb-1">Your Impact:</p>
                 <p className="text-primary-700">
                   {calculateImpact(activeAmount)}
                 </p>
@@ -130,9 +130,9 @@ export default function DonatePage() {
                     type="checkbox"
                     checked={isAnonymous}
                     onChange={(e) => setIsAnonymous(e.target.checked)}
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
                   />
-                  <span className="ml-2 text-gray-700">
+                  <span className="ml-2 text-neutral-700">
                     Make my donation anonymous
                   </span>
                 </label>
@@ -147,7 +147,7 @@ export default function DonatePage() {
                 {donationType === 'MONTHLY' && '/month'}
               </button>
 
-              <p className="text-xs text-gray-600 mt-4 text-center">
+              <p className="text-xs text-neutral-600 mt-4 text-center">
                 Secure payment processing via Stripe. EqualEd is a 501(c)(3) nonprofit. 
                 Your donation is tax-deductible.
               </p>
@@ -157,7 +157,7 @@ export default function DonatePage() {
           {/* Impact Stories & Stats */}
           <div>
             <div className="card mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-neutral-900 mb-6">
                 Where Your Money Goes
               </h2>
 
@@ -167,10 +167,10 @@ export default function DonatePage() {
                     <Users className="h-6 w-6 text-primary-600" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="font-semibold text-neutral-900 mb-1">
                       Free Tutoring Sessions
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-neutral-600 text-sm">
                       85% of donations fund free one-on-one tutoring for under-privileged students
                     </p>
                   </div>
@@ -181,10 +181,10 @@ export default function DonatePage() {
                     <Award className="h-6 w-6 text-primary-600" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="font-semibold text-neutral-900 mb-1">
                       Tutor Support & Training
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-neutral-600 text-sm">
                       10% supports tutor development and quality assurance
                     </p>
                   </div>
@@ -195,10 +195,10 @@ export default function DonatePage() {
                     <TrendingUp className="h-6 w-6 text-primary-600" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="font-semibold text-neutral-900 mb-1">
                       Platform & Operations
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-neutral-600 text-sm">
                       5% maintains our technology platform and operations
                     </p>
                   </div>
@@ -227,10 +227,10 @@ export default function DonatePage() {
             {/* Sponsor a Student */}
             <div className="card mt-6 border-2 border-primary-300">
               <Heart className="h-10 w-10 text-primary-600 mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-neutral-900 mb-3">
                 Sponsor a Student
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-neutral-600 mb-4">
                 Commit to supporting one student&apos;s education for an entire semester. 
                 Receive quarterly updates on their progress.
               </p>
@@ -246,7 +246,7 @@ export default function DonatePage() {
 
         {/* Donor Wall Preview */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-3xl font-bold text-neutral-900 mb-8 text-center">
             Thank You to Our Generous Donors
           </h2>
           <div className="bg-white rounded-xl shadow-md p-8">
@@ -266,7 +266,7 @@ export default function DonatePage() {
                 'Grace Foundation',
               ].map((name, i) => (
                 <div key={i} className="p-3 bg-neutral-50 rounded-lg">
-                  <div className="text-sm font-medium text-gray-900">{name}</div>
+                  <div className="text-sm font-medium text-neutral-900">{name}</div>
                 </div>
               ))}
             </div>

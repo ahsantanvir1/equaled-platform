@@ -88,10 +88,10 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
                   loading="lazy"
                 />
                 <div className="flex-1">
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                  <h1 className="text-3xl font-bold text-neutral-900 mb-2">
                     {tutor.name}
                   </h1>
-                  <div className="flex items-center text-gray-600 mb-3">
+                  <div className="flex items-center text-neutral-600 mb-3">
                     <MapPin className="h-5 w-5 mr-1" aria-hidden="true" />
                     {tutor.location}
                   </div>
@@ -99,15 +99,15 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
                     <div className="flex items-center">
                       <Star className="h-5 w-5 text-yellow-400 fill-current mr-1" aria-hidden="true" />
                       <span className="font-semibold">{tutor.rating}</span>
-                      <span className="text-gray-600 ml-1">
+                      <span className="text-neutral-600 ml-1">
                         ({tutor.totalReviews} reviews)
                       </span>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-neutral-600">
                       <BookOpen className="h-5 w-5 mr-1" aria-hidden="true" />
                       {tutor.totalSessions} sessions
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-neutral-600">
                       <Award className="h-5 w-5 mr-1" aria-hidden="true" />
                       {tutor.experience} years exp.
                     </div>
@@ -126,8 +126,8 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
 
             {/* About */}
             <div className="card">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">About {tutor.name}</h2>
-              <div className="prose max-w-none text-gray-600">
+              <h2 className="text-2xl font-bold text-neutral-900 mb-4">About {tutor.name}</h2>
+              <div className="prose max-w-none text-neutral-600">
                 {tutor.bio.split('\n\n').map((paragraph, index) => (
                   <p key={index} className="mb-4 leading-relaxed">{paragraph}</p>
                 ))}
@@ -136,17 +136,17 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
 
             {/* Qualifications */}
             <div className="card">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Qualifications</h2>
+              <h2 className="text-2xl font-bold text-neutral-900 mb-4">Qualifications</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Education</h3>
-                  <p className="text-gray-600">{tutor.education}</p>
+                  <h3 className="font-semibold text-neutral-900 mb-2">Education</h3>
+                  <p className="text-neutral-600">{tutor.education}</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Certifications</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-2">Certifications</h3>
                   <ul className="space-y-1">
                     {tutor.certifications.map((cert, index) => (
-                      <li key={index} className="flex items-center text-gray-600">
+                      <li key={index} className="flex items-center text-neutral-600">
                         <Award className="h-4 w-4 text-primary-600 mr-2" aria-hidden="true" />
                         {cert}
                       </li>
@@ -154,7 +154,7 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Subjects</h3>
+                  <h3 className="font-semibold text-neutral-900 mb-2">Subjects</h3>
                   <div className="flex flex-wrap gap-2">
                     {tutor.subjects.map((subject) => (
                       <span key={subject} className="badge badge-primary">
@@ -168,21 +168,21 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
 
             {/* Reviews */}
             <div className="card">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Reviews</h2>
+              <h2 className="text-2xl font-bold text-neutral-900 mb-6">Reviews</h2>
               <div className="space-y-6">
                 {tutor.reviews.map((review) => (
-                  <div key={review.id} className="border-b border-gray-200 last:border-0 pb-6 last:pb-0">
+                  <div key={review.id} className="border-b border-neutral-200 last:border-0 pb-6 last:pb-0">
                     <div className="flex items-center mb-2">
                       <div className="flex items-center mr-3">
                         {[...Array(review.rating)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" aria-hidden="true" />
                         ))}
                       </div>
-                      <span className="font-semibold text-gray-900">{review.studentName}</span>
+                      <span className="font-semibold text-neutral-900">{review.studentName}</span>
                       <span className="text-gray-500 mx-2">•</span>
                       <span className="text-sm text-gray-500">{review.date}</span>
                     </div>
-                    <p className="text-gray-600">{review.comment}</p>
+                    <p className="text-neutral-600">{review.comment}</p>
                   </div>
                 ))}
               </div>
@@ -194,15 +194,15 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
             {/* Booking Card */}
             <div className="card border-2 border-primary-300 sticky top-4">
               <div className="text-center mb-6">
-                <div className="text-4xl font-bold text-gray-900 mb-1">
+                <div className="text-4xl font-bold text-neutral-900 mb-1">
                   {formatCurrency(tutor.hourlyRate)}
-                  <span className="text-lg font-normal text-gray-600">/hour</span>
+                  <span className="text-lg font-normal text-neutral-600">/hour</span>
                 </div>
               </div>
 
               <div className="space-y-4 mb-6">
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
+                  <h3 className="font-semibold text-neutral-900 mb-2 flex items-center">
                     <Calendar className="h-4 w-4 mr-2" aria-hidden="true" />
                     Availability
                   </h3>
@@ -216,13 +216,13 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
+                  <h3 className="font-semibold text-neutral-900 mb-2 flex items-center">
                     <Clock className="h-4 w-4 mr-2" aria-hidden="true" />
                     Session Types
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {tutor.sessionTypes.map((type) => (
-                      <span key={type} className="badge bg-neutral-200 text-gray-700">
+                      <span key={type} className="badge bg-neutral-200 text-neutral-700">
                         {type}
                       </span>
                     ))}
@@ -240,8 +240,8 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
 
             {/* Quick Info */}
             <div className="card bg-primary-50">
-              <h3 className="font-semibold text-gray-900 mb-3">Quick Info</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <h3 className="font-semibold text-neutral-900 mb-3">Quick Info</h3>
+              <ul className="space-y-2 text-sm text-neutral-600">
                 <li>✓ Responds within 24 hours</li>
                 <li>✓ Accepts new students</li>
                 <li>✓ Free 15-minute consultation</li>

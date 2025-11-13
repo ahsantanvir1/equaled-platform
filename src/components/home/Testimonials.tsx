@@ -32,10 +32,10 @@ export default function Testimonials() {
     <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 id="testimonials-heading" className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
             What Families Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
             Real stories from real students and parents who&apos;ve experienced the EqualEd difference.
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Testimonials() {
                 <span className="sr-only">{testimonial.rating} out of 5 stars</span>
               </div>
 
-              <blockquote className="text-gray-700 mb-6 italic leading-relaxed">
+              <blockquote className="text-neutral-700 mb-6 italic leading-relaxed">
                 &ldquo;{testimonial.content}&rdquo;
               </blockquote>
 
@@ -68,8 +68,8 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
+                  <div className="font-semibold text-neutral-900">{testimonial.name}</div>
+                  <div className="text-sm text-neutral-600">{testimonial.role}</div>
                 </div>
               </div>
             </article>

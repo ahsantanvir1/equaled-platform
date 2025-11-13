@@ -23,10 +23,10 @@ export default function PackagesPage() {
       <div className="container-custom py-16">
         {/* Free Tutoring Info */}
         <div className="bg-success-50 border-2 border-success-500 rounded-xl p-8 mb-12 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3">
             Free Tutoring Available
           </h2>
-          <p className="text-lg text-gray-700 mb-4">
+          <p className="text-lg text-neutral-700 mb-4">
             Under-privileged students in Pennsylvania may qualify for <strong>completely free tutoring</strong> through our scholarship program, funded by community donations.
           </p>
           <Link
@@ -46,7 +46,7 @@ export default function PackagesPage() {
               className={`card ${
                 'popular' in pkg && pkg.popular
                   ? 'border-4 border-primary-500 relative'
-                  : 'border-2 border-gray-200'
+                  : 'border-2 border-neutral-200'
               }`}
             >
               {'popular' in pkg && pkg.popular && (
@@ -58,16 +58,16 @@ export default function PackagesPage() {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-neutral-900 mb-2">
                   {pkg.name}
                 </h3>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-gray-900">
+                  <span className="text-4xl font-bold text-neutral-900">
                     {formatCurrency(pkg.price)}
                   </span>
-                  <span className="text-gray-600">/month</span>
+                  <span className="text-neutral-600">/month</span>
                 </div>
-                <p className="text-gray-600">{pkg.description}</p>
+                <p className="text-neutral-600">{pkg.description}</p>
               </div>
 
               <div className="mb-6">
@@ -75,9 +75,9 @@ export default function PackagesPage() {
                   <span className="text-5xl font-bold text-primary-600">
                     {pkg.sessions}
                   </span>
-                  <span className="text-gray-600 ml-2">sessions/month</span>
+                  <span className="text-neutral-600 ml-2">sessions/month</span>
                 </div>
-                <p className="text-center text-sm text-gray-600">
+                <p className="text-center text-sm text-neutral-600">
                   {formatCurrency(pkg.price / pkg.sessions)} per session
                 </p>
               </div>
@@ -89,7 +89,7 @@ export default function PackagesPage() {
                       className="h-5 w-5 text-success-600 mr-2 flex-shrink-0 mt-0.5"
                       aria-hidden="true"
                     />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-neutral-700">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -108,52 +108,52 @@ export default function PackagesPage() {
 
         {/* FAQ Section */}
         <div className="bg-white rounded-xl shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+          <h2 className="text-3xl font-bold text-neutral-900 mb-6 text-center">
             Frequently Asked Questions
           </h2>
 
           <div className="space-y-6 max-w-3xl mx-auto">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 Can I cancel anytime?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-neutral-600">
                 Yes! There are no long-term contracts. You can cancel or change your plan at any time.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 What happens to unused sessions?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-neutral-600">
                 Unused sessions roll over for one month. For example, if you only use 2 out of 4 sessions this month, you&apos;ll have 6 sessions available next month.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 Can I share sessions with siblings?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-neutral-600">
                 Absolutely! Your package sessions can be used by any student in your household.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 Are there any additional fees?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-neutral-600">
                 No hidden fees! The price you see is what you pay. This includes access to all tutors, session recordings, and progress tracking.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 How do I know if I qualify for free tutoring?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-neutral-600">
                 Pennsylvania families with household income below federal poverty guidelines may qualify. <Link href="/eligibility" className="text-primary-600 hover:text-primary-700 font-medium">Check your eligibility here</Link>.
               </p>
             </div>

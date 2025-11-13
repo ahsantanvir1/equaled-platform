@@ -82,7 +82,7 @@ export default function MailingListPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {/* Benefits Section */}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-neutral-900 mb-6">
                   Why Subscribe?
                 </h2>
                 <div className="space-y-6">
@@ -96,10 +96,10 @@ export default function MailingListPage() {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-gray-900 mb-1">
+                          <h3 className="text-lg font-bold text-neutral-900 mb-1">
                             {benefit.title}
                           </h3>
-                          <p className="text-gray-600">{benefit.description}</p>
+                          <p className="text-neutral-600">{benefit.description}</p>
                         </div>
                       </div>
                     );
@@ -107,8 +107,8 @@ export default function MailingListPage() {
                 </div>
 
                 <div className="mt-8 p-6 bg-primary-50 rounded-xl border border-primary-100">
-                  <h3 className="font-bold text-gray-900 mb-2">Privacy First</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-neutral-900 mb-2">Privacy First</h3>
+                  <p className="text-sm text-neutral-600">
                     We respect your privacy and will never share your information with third parties.
                     You can unsubscribe at any time with a single click.
                   </p>
@@ -117,12 +117,12 @@ export default function MailingListPage() {
 
               {/* Form Section */}
               <div className="card">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-neutral-900 mb-6">
                   Subscribe Now
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-neutral-700 mb-2">
                       First Name *
                     </label>
                     <input
@@ -137,7 +137,7 @@ export default function MailingListPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-neutral-700 mb-2">
                       Last Name
                     </label>
                     <input
@@ -151,7 +151,7 @@ export default function MailingListPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
                       Email Address *
                     </label>
                     <input
@@ -166,7 +166,7 @@ export default function MailingListPage() {
                   </div>
 
                   <fieldset>
-                    <legend className="block text-sm font-medium text-gray-700 mb-3">
+                    <legend className="block text-sm font-medium text-neutral-700 mb-3">
                       Areas of Interest
                     </legend>
                     <div className="grid grid-cols-2 gap-2">
@@ -179,9 +179,9 @@ export default function MailingListPage() {
                             type="checkbox"
                             checked={interests.includes(interest)}
                             onChange={() => handleInterestToggle(interest)}
-                            className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                            className="w-4 h-4 text-primary-600 border-neutral-300 rounded focus:ring-primary-500"
                           />
-                          <span className="text-sm text-gray-700">{interest}</span>
+                          <span className="text-sm text-neutral-700">{interest}</span>
                         </label>
                       ))}
                     </div>
@@ -206,16 +206,16 @@ export default function MailingListPage() {
               <div className="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full mb-6">
                 <CheckCircle className="h-12 w-12 text-green-600" aria-hidden="true" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
                 Welcome to the EqualEd Community!
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-neutral-600 mb-8">
                 Thank you for subscribing to our mailing list. We&apos;ve sent a confirmation email to{' '}
                 <span className="font-semibold text-primary-600">{email}</span>
               </p>
               <div className="card bg-primary-50 border-primary-200">
-                <h3 className="font-bold text-gray-900 mb-2">What&apos;s Next?</h3>
-                <ul className="text-left space-y-2 text-gray-700">
+                <h3 className="font-bold text-neutral-900 mb-2">What&apos;s Next?</h3>
+                <ul className="text-left space-y-2 text-neutral-700">
                   <li className="flex items-start">
                     <span className="mr-2">✓</span>
                     <span>Check your inbox for a confirmation email</span>

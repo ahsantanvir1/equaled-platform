@@ -91,7 +91,7 @@ export default function TutorMembershipModal({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
+          className="absolute top-4 right-4 text-gray-400 hover:text-neutral-600 transition-colors z-10"
           aria-label="Close modal"
         >
           <X className="h-6 w-6" aria-hidden="true" />
@@ -132,19 +132,19 @@ export default function TutorMembershipModal({
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-neutral-900 mb-2">{plan.name}</h3>
+                  <p className="text-neutral-600 text-sm mb-4">{plan.description}</p>
 
                   <div className="mb-6">
-                    <span className="text-4xl font-bold text-gray-900">${plan.price}</span>
-                    <span className="text-gray-600">/month</span>
+                    <span className="text-4xl font-bold text-neutral-900">${plan.price}</span>
+                    <span className="text-neutral-600">/month</span>
                   </div>
 
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start text-sm">
                         <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-neutral-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -163,8 +163,8 @@ export default function TutorMembershipModal({
 
           {/* Additional Info */}
           <div className="mt-8 p-6 bg-neutral-50 rounded-xl">
-            <h3 className="font-bold text-gray-900 mb-3 text-center">All Plans Include:</h3>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+            <h3 className="font-bold text-neutral-900 mb-3 text-center">All Plans Include:</h3>
+            <div className="grid md:grid-cols-3 gap-4 text-sm text-neutral-600">
               <div className="flex items-center">
                 <Check className="h-5 w-5 text-primary-600 mr-2" aria-hidden="true" />
                 <span>Secure payment processing</span>

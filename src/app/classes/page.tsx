@@ -162,26 +162,26 @@ export default function ClassesPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
             <div className="text-3xl font-bold text-primary-600 mb-2">50+</div>
-            <div className="text-gray-600">Subjects</div>
+            <div className="text-neutral-600">Subjects</div>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
             <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
-            <div className="text-gray-600">Expert Tutors</div>
+            <div className="text-neutral-600">Expert Tutors</div>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
             <div className="text-3xl font-bold text-primary-600 mb-2">K-12</div>
-            <div className="text-gray-600">Grade Levels</div>
+            <div className="text-neutral-600">Grade Levels</div>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-sm text-center">
             <div className="text-3xl font-bold text-primary-600 mb-2">24/7</div>
-            <div className="text-gray-600">Availability</div>
+            <div className="text-neutral-600">Availability</div>
           </div>
         </div>
       </div>
 
       {/* Subjects Grid */}
       <section className="container-custom py-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-8">
           Browse by Subject
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -200,8 +200,8 @@ export default function ClassesPage() {
                 <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 ${subject.color}`}>
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{subject.name}</h3>
-                <p className="text-gray-600 text-sm mb-4">{subject.description}</p>
+                <h3 className="text-xl font-bold text-neutral-900 mb-2">{subject.name}</h3>
+                <p className="text-neutral-600 text-sm mb-4">{subject.description}</p>
                 <div className="flex items-center text-primary-600 font-semibold">
                   <Users className="h-4 w-4 mr-2" aria-hidden="true" />
                   <span>{subject.tutorCount} tutors</span>
@@ -216,10 +216,10 @@ export default function ClassesPage() {
           <div className="mt-12">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <h2 className="text-3xl font-bold text-neutral-900 mb-2">
                   {selectedSubjectData?.name} Tutors
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-neutral-600">
                   {filteredTutors.length} expert tutor{filteredTutors.length !== 1 ? 's' : ''} available
                 </p>
               </div>
@@ -245,13 +245,13 @@ export default function ClassesPage() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{tutor.name}</h3>
+                      <h3 className="text-xl font-bold text-neutral-900 mb-2">{tutor.name}</h3>
                       <div className="flex items-center gap-4 mb-3 text-sm">
                         <div className="flex items-center text-yellow-500">
                           <Star className="h-4 w-4 fill-current mr-1" aria-hidden="true" />
                           <span className="font-semibold">{tutor.rating}</span>
                         </div>
-                        <div className="flex items-center text-gray-600">
+                        <div className="flex items-center text-neutral-600">
                           <Clock className="h-4 w-4 mr-1" aria-hidden="true" />
                           <span>{tutor.sessions} sessions</span>
                         </div>

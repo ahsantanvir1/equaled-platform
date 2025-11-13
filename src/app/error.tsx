@@ -22,10 +22,10 @@ export default function Error({
         <div className="inline-flex items-center justify-center w-16 h-16 bg-error-100 rounded-full mb-6">
           <AlertCircle className="h-10 w-10 text-error-600" aria-hidden="true" />
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl font-bold text-neutral-900 mb-4">
           Something went wrong!
         </h1>
-        <p className="text-gray-600 mb-8">
+        <p className="text-neutral-600 mb-8">
           We encountered an unexpected error. Please try again or return to the homepage.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

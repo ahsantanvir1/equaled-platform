@@ -64,10 +64,10 @@ export default function SignUpPage() {
   return (
     <div className="min-h-screen bg-neutral-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h1 className="text-center text-3xl font-bold text-gray-900">
+        <h1 className="text-center text-3xl font-bold text-neutral-900">
           Create your account
         </h1>
-        <p className="mt-2 text-center text-sm text-gray-600">
+        <p className="mt-2 text-center text-sm text-neutral-600">
           Already have an account?{' '}
           <Link href="/auth/signin" className="font-medium text-primary-600 hover:text-primary-500">
             Sign in
@@ -198,7 +198,7 @@ export default function SignUpPage() {
               </div>
             </div>
 
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-neutral-600">
               By creating an account, you agree to our{' '}
               <Link href="/terms" className="text-primary-600 hover:text-primary-500">
                 Terms of Service

@@ -40,7 +40,7 @@ export default function Navbar() {
               aria-label="EqualEd Home"
             >
               <GraduationCap className="h-8 w-8 text-primary-600" aria-hidden="true" />
-              <span className="text-2xl font-bold text-gray-900">
+              <span className="text-2xl font-bold text-neutral-900">
                 Equal<span className="text-primary-600">Ed</span>
               </span>
             </Link>
@@ -193,7 +193,7 @@ export default function Navbar() {
             </button>
 
             {/* Divider */}
-            <div className="border-t border-gray-200 my-2"></div>
+            <div className="border-t border-neutral-200 my-2"></div>
 
             {session?.user ? (
               <>

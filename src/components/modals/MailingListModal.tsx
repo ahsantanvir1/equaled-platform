@@ -54,7 +54,7 @@ export default function MailingListModal({ isOpen, onClose }: MailingListModalPr
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-neutral-600 transition-colors"
           aria-label="Close modal"
         >
           <X className="h-6 w-6" aria-hidden="true" />
@@ -67,10 +67,10 @@ export default function MailingListModal({ isOpen, onClose }: MailingListModalPr
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
                 <Mail className="h-8 w-8 text-primary-600" aria-hidden="true" />
               </div>
-              <h2 id="mailing-list-title" className="text-2xl font-bold text-gray-900 mb-2">
+              <h2 id="mailing-list-title" className="text-2xl font-bold text-neutral-900 mb-2">
                 Join Our Mailing List
               </h2>
-              <p className="text-gray-600">
+              <p className="text-neutral-600">
                 Stay updated with the latest news, educational tips, and special offers.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function MailingListModal({ isOpen, onClose }: MailingListModalPr
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="modal-firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="modal-firstName" className="block text-sm font-medium text-neutral-700 mb-2">
                   First Name
                 </label>
                 <input
@@ -93,7 +93,7 @@ export default function MailingListModal({ isOpen, onClose }: MailingListModalPr
               </div>
 
               <div>
-                <label htmlFor="modal-email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="modal-email" className="block text-sm font-medium text-neutral-700 mb-2">
                   Email Address
                 </label>
                 <input
@@ -125,8 +125,8 @@ export default function MailingListModal({ isOpen, onClose }: MailingListModalPr
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
               <CheckCircle className="h-8 w-8 text-green-600" aria-hidden="true" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Welcome aboard!</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl font-bold text-neutral-900 mb-2">Welcome aboard!</h3>
+            <p className="text-neutral-600">
               Thank you for subscribing. Check your inbox for a confirmation email.
             </p>
           </div>
