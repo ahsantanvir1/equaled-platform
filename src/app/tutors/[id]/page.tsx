@@ -59,7 +59,7 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
   const tutor = await getTutor(params.id);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       {/* Back Button */}
       <div className="bg-white border-b">
         <div className="container-custom py-4">
@@ -222,7 +222,7 @@ export default async function TutorProfilePage({ params }: { params: { id: strin
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {tutor.sessionTypes.map((type) => (
-                      <span key={type} className="badge bg-gray-200 text-gray-700">
+                      <span key={type} className="badge bg-neutral-200 text-gray-700">
                         {type}
                       </span>
                     ))}

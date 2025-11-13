@@ -52,7 +52,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="text-primary-800 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
                 {link.label}
               </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
             {/* Mailing List Button */}
             <button
               onClick={() => setShowMailingModal(true)}
-              className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 flex items-center gap-1"
+              className="text-primary-800 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 flex items-center gap-1"
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
               <span className="hidden lg:inline">Mailing List</span>
@@ -70,7 +70,7 @@ export default function Navbar() {
             {/* Membership Button */}
             <button
               onClick={() => setShowMembershipModal(true)}
-              className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 flex items-center gap-1"
+              className="text-primary-800 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 flex items-center gap-1"
             >
               <DollarSign className="h-4 w-4" aria-hidden="true" />
               <span className="hidden lg:inline">Tutor Membership</span>
@@ -85,7 +85,7 @@ export default function Navbar() {
               <div className="ml-4 relative">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   aria-expanded={showUserMenu}
                   aria-haspopup="true"
                 >
@@ -97,7 +97,7 @@ export default function Navbar() {
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 border">
                     <Link
                       href="/dashboard"
-                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      className="flex items-center px-4 py-2 text-primary-800 hover:bg-primary-50"
                       onClick={() => setShowUserMenu(false)}
                     >
                       <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -108,7 +108,7 @@ export default function Navbar() {
                         setShowUserMenu(false);
                         signOut();
                       }}
-                      className="flex items-center w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100"
+                      className="flex items-center w-full px-4 py-2 text-left text-primary-800 hover:bg-primary-50"
                     >
                       <LogOut className="h-4 w-4 mr-2" aria-hidden="true" />
                       Sign Out
@@ -120,7 +120,7 @@ export default function Navbar() {
               <div className="ml-4 flex items-center space-x-2">
                 <Link
                   href="/auth/signin"
-                  className="text-gray-700 hover:text-primary-600 px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="text-primary-800 hover:text-primary-600 px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-primary-500"
                 >
                   Sign In
                 </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-primary-600 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="text-primary-800 hover:text-primary-600 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -161,7 +161,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+                className="block px-3 py-2 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-md font-medium"
                 onClick={closeMenu}
               >
                 {link.label}
@@ -174,7 +174,7 @@ export default function Navbar() {
                 setShowMailingModal(true);
                 closeMenu();
               }}
-              className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+              className="flex items-center w-full text-left px-3 py-2 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-md font-medium"
             >
               <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
               Join Our Mailing List
@@ -186,7 +186,7 @@ export default function Navbar() {
                 setShowMembershipModal(true);
                 closeMenu();
               }}
-              className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+              className="flex items-center w-full text-left px-3 py-2 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-md font-medium"
             >
               <DollarSign className="h-4 w-4 mr-2" aria-hidden="true" />
               Tutor Membership
@@ -199,7 +199,7 @@ export default function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+                  className="block px-3 py-2 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-md font-medium"
                   onClick={closeMenu}
                 >
                   Dashboard
@@ -209,7 +209,7 @@ export default function Navbar() {
                     closeMenu();
                     signOut();
                   }}
-                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+                  className="block w-full text-left px-3 py-2 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-md font-medium"
                 >
                   Sign Out
                 </button>
@@ -218,7 +218,7 @@ export default function Navbar() {
               <>
                 <Link
                   href="/auth/signin"
-                  className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+                  className="block px-3 py-2 text-primary-800 hover:text-primary-600 hover:bg-primary-50 rounded-md font-medium"
                   onClick={closeMenu}
                 >
                   Sign In

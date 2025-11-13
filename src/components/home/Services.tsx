@@ -35,7 +35,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50" aria-labelledby="services-heading">
+    <section className="py-20 bg-neutral-50" aria-labelledby="services-heading">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 id="services-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

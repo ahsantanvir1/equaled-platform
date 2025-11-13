@@ -15,7 +15,7 @@ export default function DonatePage() {
   const activeAmount = customAmount ? parseFloat(customAmount) : amount;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       {/* Header */}
       <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
         <div className="container-custom text-center">
@@ -265,7 +265,7 @@ export default function DonatePage() {
                 'Robert W.',
                 'Grace Foundation',
               ].map((name, i) => (
-                <div key={i} className="p-3 bg-gray-50 rounded-lg">
+                <div key={i} className="p-3 bg-neutral-50 rounded-lg">
                   <div className="text-sm font-medium text-gray-900">{name}</div>
                 </div>
               ))}

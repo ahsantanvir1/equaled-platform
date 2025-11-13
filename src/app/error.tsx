@@ -17,7 +17,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-neutral-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-error-100 rounded-full mb-6">
           <AlertCircle className="h-10 w-10 text-error-600" aria-hidden="true" />
@@ -48,7 +48,7 @@ export default function Error({
             <summary className="cursor-pointer text-sm text-gray-500 mb-2">
               Error Details (Development Only)
             </summary>
-            <pre className="bg-gray-100 p-4 rounded text-xs overflow-auto">
+            <pre className="bg-neutral-100 p-4 rounded text-xs overflow-auto">
               {error.message}
               {error.stack && `\n\n${error.stack}`}
             </pre>

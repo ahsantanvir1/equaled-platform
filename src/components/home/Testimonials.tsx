@@ -44,7 +44,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.id}
-              className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow relative"
+              className="bg-neutral-50 p-8 rounded-xl hover:shadow-lg transition-shadow relative"
             >
               <Quote className="h-10 w-10 text-primary-200 absolute top-6 left-6" aria-hidden="true" />
               

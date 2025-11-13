@@ -58,7 +58,7 @@ export default function BecomeTutorPage() {
 
   if (status === 'success') {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12">
+      <div className="min-h-screen bg-neutral-50 flex items-center justify-center py-12">
         <div className="card max-w-2xl text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-success-100 rounded-full mb-6">
             <CheckCircle className="h-10 w-10 text-success-600" aria-hidden="true" />
@@ -89,7 +89,7 @@ export default function BecomeTutorPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       {/* Header */}
       <div className="bg-primary-600 text-white py-16">
         <div className="container-custom">

@@ -29,7 +29,7 @@ export default function ImpactStats() {
   ];
 
   return (
-    <section className="bg-gray-50 py-16" aria-labelledby="impact-heading">
+    <section className="bg-neutral-50 py-16" aria-labelledby="impact-heading">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 id="impact-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

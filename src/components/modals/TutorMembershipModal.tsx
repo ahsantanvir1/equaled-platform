@@ -162,7 +162,7 @@ export default function TutorMembershipModal({
           </div>
 
           {/* Additional Info */}
-          <div className="mt-8 p-6 bg-gray-50 rounded-xl">
+          <div className="mt-8 p-6 bg-neutral-50 rounded-xl">
             <h3 className="font-bold text-gray-900 mb-3 text-center">All Plans Include:</h3>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
               <div className="flex items-center">
