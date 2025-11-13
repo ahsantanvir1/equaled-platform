@@ -66,6 +66,11 @@ export default function Footer() {
             <nav aria-label="Footer navigation">
               <ul className="space-y-2">
                 <li>
+                  <Link href="/classes" className="text-gray-400 hover:text-white transition-colors">
+                    Our Classes
+                  </Link>
+                </li>
+                <li>
                   <Link href="/tutors" className="text-gray-400 hover:text-white transition-colors">
                     Find a Tutor
                   </Link>
@@ -83,6 +88,11 @@ export default function Footer() {
                 <li>
                   <Link href="/donate" className="text-gray-400 hover:text-white transition-colors">
                     Donate
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/mailing-list" className="text-gray-400 hover:text-white transition-colors">
+                    Join Mailing List
                   </Link>
                 </li>
                 <li>

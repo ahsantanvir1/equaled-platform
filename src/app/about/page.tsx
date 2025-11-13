@@ -1,4 +1,4 @@
-import { Target, Heart, Users, Award } from 'lucide-react';
+import { Target, Heart, Users, Award, Mail, Linkedin } from 'lucide-react';
 
 export default function AboutPage() {
   const values = [
@@ -37,14 +37,103 @@ export default function AboutPage() {
       <div className="bg-primary-600 text-white py-16">
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About EqualEd</h1>
-          <p className="text-xl text-primary-100 max-w-2xl">
+          <p className="text-xl text-primary-100 max-w-2xl mb-8">
             Our mission is to make quality education accessible to every student in Pennsylvania.
           </p>
+          {/* Quick Navigation */}
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a
+              href="#founder"
+              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors backdrop-blur-sm"
+            >
+              Founder
+            </a>
+            <a
+              href="#mission"
+              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors backdrop-blur-sm"
+            >
+              Our Mission
+            </a>
+            <a
+              href="#team"
+              className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors backdrop-blur-sm"
+            >
+              Our Team
+            </a>
+          </div>
         </div>
       </div>
 
+      {/* Founder Section */}
+      <section id="founder" className="bg-white py-16 scroll-mt-20">
+        <div className="container-custom">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            Meet Our Founder
+          </h2>
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Dr. Sarah Williams</h3>
+                <p className="text-primary-600 text-lg font-semibold mb-6">Founder & CEO</p>
+                <div className="space-y-4 text-gray-600 leading-relaxed">
+                  <p>
+                    Dr. Sarah Williams is a visionary educator with over 20 years of experience in
+                    education reform and advocacy. As a former high school principal in Philadelphia,
+                    she witnessed firsthand the educational disparities affecting underserved communities.
+                  </p>
+                  <p>
+                    Her passion for educational equity led her to establish EqualEd in 2020, with the
+                    mission of making quality tutoring accessible to all students, regardless of their
+                    economic background.
+                  </p>
+                  <p>
+                    Dr. Williams holds a Ph.D. in Education Policy from the University of Pennsylvania
+                    and has been recognized as one of Pennsylvania&apos;s &ldquo;Top 40 Under 40&rdquo; education leaders.
+                    She believes that every student has the potential to succeed when given the right
+                    support and resources.
+                  </p>
+                </div>
+                <div className="flex gap-4 mt-6">
+                  <a
+                    href="mailto:sarah@equaled.org"
+                    className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700"
+                  >
+                    <Mail className="h-5 w-5" aria-hidden="true" />
+                    <span>Contact</span>
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700"
+                  >
+                    <Linkedin className="h-5 w-5" aria-hidden="true" />
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600"
+                    alt=""
+                    className="rounded-2xl shadow-2xl w-full"
+                    loading="lazy"
+                  />
+                  <div className="absolute -bottom-6 -right-6 bg-primary-600 text-white p-6 rounded-xl shadow-xl">
+                    <p className="text-3xl font-bold">20+</p>
+                    <p className="text-primary-100">Years Experience</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission Section */}
-      <section className="container-custom py-16">
+      <section id="mission" className="container-custom py-16 scroll-mt-20">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -147,9 +236,9 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="container-custom py-16">
+      <section id="team" className="container-custom py-16 scroll-mt-20">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
-          Our Leadership Team
+          Our Team
         </h2>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
           Experienced educators and technologists committed to educational equity

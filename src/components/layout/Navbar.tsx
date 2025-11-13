@@ -3,20 +3,23 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
-import { Menu, X, GraduationCap, User, LogOut, Settings } from 'lucide-react';
+import { Menu, X, GraduationCap, User, LogOut, Settings, Mail, DollarSign } from 'lucide-react';
+import MailingListModal from '../modals/MailingListModal';
+import TutorMembershipModal from '../modals/TutorMembershipModal';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showMailingModal, setShowMailingModal] = useState(false);
+  const [showMembershipModal, setShowMembershipModal] = useState(false);
   const { data: session, status } = useSession();
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/tutors', label: 'Find a Tutor' },
-    { href: '/packages', label: 'Packages' },
-    { href: '/donate', label: 'Donate' },
     { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/classes', label: 'Our Classes' },
+    { href: '/become-tutor', label: 'Apply' },
+    { href: '/donate', label: 'Donate' },
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -54,6 +57,24 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Mailing List Button */}
+            <button
+              onClick={() => setShowMailingModal(true)}
+              className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 flex items-center gap-1"
+            >
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              <span className="hidden lg:inline">Mailing List</span>
+            </button>
+
+            {/* Membership Button */}
+            <button
+              onClick={() => setShowMembershipModal(true)}
+              className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-2 rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-primary-500 flex items-center gap-1"
+            >
+              <DollarSign className="h-4 w-4" aria-hidden="true" />
+              <span className="hidden lg:inline">Tutor Membership</span>
+            </button>
 
             {/* User Menu or Auth Buttons */}
             {status === 'loading' ? (
@@ -147,6 +168,33 @@ export default function Navbar() {
               </Link>
             ))}
 
+            {/* Mobile Mailing List Button */}
+            <button
+              onClick={() => {
+                setShowMailingModal(true);
+                closeMenu();
+              }}
+              className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+            >
+              <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
+              Join Our Mailing List
+            </button>
+
+            {/* Mobile Membership Button */}
+            <button
+              onClick={() => {
+                setShowMembershipModal(true);
+                closeMenu();
+              }}
+              className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md font-medium"
+            >
+              <DollarSign className="h-4 w-4 mr-2" aria-hidden="true" />
+              Tutor Membership
+            </button>
+
+            {/* Divider */}
+            <div className="border-t border-gray-200 my-2"></div>
+
             {session?.user ? (
               <>
                 <Link
@@ -187,6 +235,10 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Modals */}
+      <MailingListModal isOpen={showMailingModal} onClose={() => setShowMailingModal(false)} />
+      <TutorMembershipModal isOpen={showMembershipModal} onClose={() => setShowMembershipModal(false)} />
     </nav>
   );
 }
